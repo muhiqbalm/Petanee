@@ -1,6 +1,6 @@
 # Petanee
-Aplikasi Rekomendasi Tanaman Berbasis WindowsForm
---------------------------------------------------------------
+## Aplikasi Rekomendasi Tanaman Berbasis WindowsForm
+---
 
 #### KELOMPOK 3
 
