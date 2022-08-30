@@ -8,7 +8,9 @@ ANGGOTA 2 : ANANTA PRIDYA YUDHA (20/463592/TK/51584)
 
 ANGGOTA 3 : IPUNG SONIA FARADHISMA (20/463603/TK/51595)
 
-"PROJECT JUNIOR TI"
+------------------------------------------------------------------------------------------------
+
+## "PROJECT JUNIOR TI"
 
 Departemen Teknik Elektro dan Teknologi Informasi, Fakultas Teknik, Universitas Gadjah Mada
 
