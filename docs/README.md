@@ -18,6 +18,8 @@ Kategori : Lingkungan hidup
 
 Tipe aplikasi : Windows Form
 
+Latar Belakang : Ada berbagai jenis tanaman dan cara merawatnya masing-masing. Sedangkan, kebanyakan orang awam yang tidak paham mengenai tanaman dan masih bingung jenis tanaman apa yang harus dipilih sesuai dengan lahan yang dimiliki. Oleh karena itu, perlu suatu aplikasi yang dapat membantu permasalahan tersebut.
+
 Permasalahan yang dipecahkan : kebingungan dalam menentukan tanaman apa yang harus ditanam di lingkungan dan lahan tertentu user
 
 Solusi : Aplikasi Rekomendasi Tanaman berbasis Windows Form
