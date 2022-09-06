@@ -30,3 +30,14 @@ Fitur aplikasi : Input daerah atau lingkungan (rumah tangga/sawah), Menampilkan 
 
 
 Aplikasi sejenis : Zukeeni
+
+## Use Case Diagram
+![image](https://user-images.githubusercontent.com/79145548/188537681-11240870-5757-44b7-b683-c061ef309543.png)
+
+## Activity Diagram
+![image](https://user-images.githubusercontent.com/79145548/188537805-8e6452b2-1b4b-432f-b30b-f948428ba5b7.png)
+
+![image](https://user-images.githubusercontent.com/79145548/188537837-f85b0fc0-6fac-43cc-b89a-cf5b4569a17f.png)
+
+![image](https://user-images.githubusercontent.com/79145548/188537864-2ed1fb78-a6cb-47aa-b82a-837067c7f2a0.png)
+
