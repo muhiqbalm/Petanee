@@ -32,14 +32,14 @@ Fitur aplikasi : Input daerah atau lingkungan (rumah tangga/sawah), Menampilkan 
 Aplikasi sejenis : Zukeeni
 
 ## Use Case Diagram
-![image](https://user-images.githubusercontent.com/79145548/188537681-11240870-5757-44b7-b683-c061ef309543.png)
+![image](https://user-images.githubusercontent.com/79145548/188539225-cf6d51ef-70dd-4f46-bc7e-6a8286b91406.png)
 
 ## Activity Diagram
-![image](https://user-images.githubusercontent.com/79145548/188537805-8e6452b2-1b4b-432f-b30b-f948428ba5b7.png)
+![image](https://user-images.githubusercontent.com/79145548/188539279-9d23c75b-8462-4e33-9268-b93b34b9fcfa.png)
 
-![image](https://user-images.githubusercontent.com/79145548/188537837-f85b0fc0-6fac-43cc-b89a-cf5b4569a17f.png)
+![image](https://user-images.githubusercontent.com/79145548/188539602-69e3a324-4d06-453c-ba90-cd9bbdff63fb.png)
 
-![image](https://user-images.githubusercontent.com/79145548/188537864-2ed1fb78-a6cb-47aa-b82a-837067c7f2a0.png)
+![image](https://user-images.githubusercontent.com/79145548/188539421-60d35b43-3327-4cfa-a72f-b4464f26601b.png)
 
 ## Class Diagram
-![image](https://user-images.githubusercontent.com/79145548/188538922-5b8ddc5a-f54f-4b2f-9dc5-c9f0683d92d4.png)
+![image](https://user-images.githubusercontent.com/79145548/188539055-24ca2e16-b9d4-4863-80ca-157e07e54de6.png)
