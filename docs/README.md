@@ -41,3 +41,5 @@ Aplikasi sejenis : Zukeeni
 
 ![image](https://user-images.githubusercontent.com/79145548/188537864-2ed1fb78-a6cb-47aa-b82a-837067c7f2a0.png)
 
+## Class Diagram
+![image](https://user-images.githubusercontent.com/79145548/188538922-5b8ddc5a-f54f-4b2f-9dc5-c9f0683d92d4.png)
