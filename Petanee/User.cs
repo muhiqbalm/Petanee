@@ -18,5 +18,9 @@ namespace Petanee
         {
             return true;
         }
+        public String getClimate(string userLocation)
+        {
+            return locationClimate;
+        }
     }
 }
