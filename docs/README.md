@@ -45,4 +45,4 @@ Aplikasi sejenis : Zukeeni
 ![image](https://user-images.githubusercontent.com/79145548/188539055-24ca2e16-b9d4-4863-80ca-157e07e54de6.png)
 
 ## Entity Relational Diagram
-![[image](https://user-images.githubusercontent.com/79145548/192404591-d792e298-bf6f-4992-87fd-88a0ab65189d.png)
+![image](https://user-images.githubusercontent.com/79145548/192404591-d792e298-bf6f-4992-87fd-88a0ab65189d.png)
