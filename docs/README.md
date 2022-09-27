@@ -42,7 +42,7 @@ Aplikasi sejenis : Zukeeni
 ![image](https://user-images.githubusercontent.com/79145548/188539421-60d35b43-3327-4cfa-a72f-b4464f26601b.png)
 
 ## Class Diagram
-![image](https://user-images.githubusercontent.com/79145548/188539055-24ca2e16-b9d4-4863-80ca-157e07e54de6.png)
+![image](https://user-images.githubusercontent.com/79145548/192405406-2684fbd9-8a11-436c-af87-aa75f46b0991.png)
 
 ## Entity Relational Diagram
 ![image](https://user-images.githubusercontent.com/79145548/192404591-d792e298-bf6f-4992-87fd-88a0ab65189d.png)
