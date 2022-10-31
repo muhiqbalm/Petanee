@@ -1,7 +1,6 @@
-﻿
-namespace Petanee
+﻿namespace Petanee
 {
-    partial class FormDashboard
+    partial class FormGetRecommendation
     {
         /// <summary>
         /// Required designer variable.
@@ -37,31 +36,31 @@ namespace Petanee
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel1.Location = new System.Drawing.Point(152, 971);
+            this.panel1.Location = new System.Drawing.Point(153, 966);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(95, 30);
+            this.panel1.Size = new System.Drawing.Size(92, 41);
             this.panel1.TabIndex = 0;
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Location = new System.Drawing.Point(0, 404);
+            this.panel2.Location = new System.Drawing.Point(2, 323);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(399, 81);
+            this.panel2.Size = new System.Drawing.Size(396, 79);
             this.panel2.TabIndex = 1;
             this.panel2.Click += new System.EventHandler(this.panel2_Click);
             // 
-            // FormDashboard
+            // FormGetRecommendation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Petanee.Properties.Resources.dashboard;
+            this.BackgroundImage = global::Petanee.Properties.Resources.get_recommendation;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "FormDashboard";
-            this.Text = "FormDashboard";
+            this.Name = "FormGetRecommendation";
+            this.Text = "FormGetRecommendation";
             this.ResumeLayout(false);
 
         }
