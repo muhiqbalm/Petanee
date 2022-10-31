@@ -32,6 +32,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panelPlant = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,12 +72,21 @@
             this.panel5.TabIndex = 3;
             this.panel5.Click += new System.EventHandler(this.panel5_Click);
             // 
+            // panelPlant
+            // 
+            this.panelPlant.Location = new System.Drawing.Point(484, 148);
+            this.panelPlant.Name = "panelPlant";
+            this.panelPlant.Size = new System.Drawing.Size(238, 301);
+            this.panelPlant.TabIndex = 4;
+            this.panelPlant.Click += new System.EventHandler(this.panelPlant_Click);
+            // 
             // FormMyPlant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Petanee.Properties.Resources.my_plant;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.panelPlant);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -93,5 +103,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panelPlant;
     }
 }

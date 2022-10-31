@@ -33,6 +33,7 @@ namespace Petanee
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.tbLocation = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,12 +73,23 @@ namespace Petanee
             this.panel4.TabIndex = 2;
             this.panel4.Click += new System.EventHandler(this.panel4_Click);
             // 
+            // tbLocation
+            // 
+            this.tbLocation.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbLocation.Location = new System.Drawing.Point(499, 162);
+            this.tbLocation.Margin = new System.Windows.Forms.Padding(5);
+            this.tbLocation.Name = "tbLocation";
+            this.tbLocation.Size = new System.Drawing.Size(1127, 24);
+            this.tbLocation.TabIndex = 3;
+            // 
             // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Petanee.Properties.Resources.dashboard;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.tbLocation);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -85,6 +97,7 @@ namespace Petanee
             this.Name = "FormDashboard";
             this.Text = "FormDashboard";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -94,5 +107,6 @@ namespace Petanee
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox tbLocation;
     }
 }

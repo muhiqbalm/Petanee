@@ -52,6 +52,12 @@
     <Compile Include="FormDashboard.Designer.cs">
       <DependentUpon>FormDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDetailPlant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailPlant.Designer.cs">
+      <DependentUpon>FormDetailPlant.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGetRecommendation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormDashboard.resx">
       <DependentUpon>FormDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDetailPlant.resx">
+      <DependentUpon>FormDetailPlant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGetRecommendation.resx">
       <DependentUpon>FormGetRecommendation.cs</DependentUpon>
@@ -139,6 +148,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\how to use1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\detail.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

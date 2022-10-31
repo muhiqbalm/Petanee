@@ -44,5 +44,11 @@ namespace Petanee
             this.Hide();
             login.Show();
         }
+
+        private void panelPlant_Click(object sender, EventArgs e)
+        {
+            Form detail = new FormDetailPlant();
+            detail.Show();
+        }
     }
 }

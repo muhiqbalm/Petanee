@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Petanee",
+    "\\Petanee\\Petanee"
   ],
-  "SelectedNode": "\\Petanee.sln",
+  "SelectedNode": "\\Petanee\\Petanee.sln",
   "PreviewInSolutionExplorer": false
 }
