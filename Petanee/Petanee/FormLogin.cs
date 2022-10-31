@@ -19,7 +19,9 @@ namespace Petanee
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            Form dashboard = new FormDashboard();
+            this.Hide();
+            dashboard.Show();
         }
 
         private void FormLogin_Load(object sender, EventArgs e)

@@ -44,7 +44,7 @@
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
             this.linkLabel1.Location = new System.Drawing.Point(1024, 766);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(54, 16);
+            this.linkLabel1.Size = new System.Drawing.Size(55, 16);
             this.linkLabel1.TabIndex = 0;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Sign In";
@@ -63,6 +63,7 @@
             this.btnSignUp.TabIndex = 1;
             this.btnSignUp.Text = "Create Account";
             this.btnSignUp.UseVisualStyleBackColor = false;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // tbUsernameSU
             // 

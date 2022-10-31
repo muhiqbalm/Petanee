@@ -10,21 +10,14 @@ using System.Windows.Forms;
 
 namespace Petanee
 {
-    public partial class FormRegister : Form
+    public partial class FormDashboard : Form
     {
-        public FormRegister()
+        public FormDashboard()
         {
             InitializeComponent();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Form login = new FormLogin();
-            this.Hide();
-            login.Show();
-        }
-
-        private void btnSignUp_Click(object sender, EventArgs e)
+        private void panel1_Click(object sender, EventArgs e)
         {
             Form login = new FormLogin();
             this.Hide();
