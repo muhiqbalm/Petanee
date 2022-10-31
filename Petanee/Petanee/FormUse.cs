@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Petanee
 {
-    public partial class FormDashboard : Form
+    public partial class FormUse : Form
     {
-        public FormDashboard()
+        public FormUse()
         {
             InitializeComponent();
         }
@@ -24,6 +24,12 @@ namespace Petanee
             login.Show();
         }
 
+        private void panel3_Click(object sender, EventArgs e)
+        {
+            Form dashboard = new FormDashboard();
+            this.Hide();
+            dashboard.Show();
+        }
 
         private void panel2_Click(object sender, EventArgs e)
         {
@@ -32,18 +38,11 @@ namespace Petanee
             getrecommendation.Show();
         }
 
-        private void panel3_Click(object sender, EventArgs e)
+        private void panel5_Click(object sender, EventArgs e)
         {
             Form myplant = new FormMyPlant();
             this.Hide();
             myplant.Show();
-        }
-
-        private void panel4_Click(object sender, EventArgs e)
-        {
-            Form howtouse = new FormUse();
-            this.Hide();
-            howtouse.Show();
         }
     }
 }

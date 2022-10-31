@@ -31,5 +31,19 @@ namespace Petanee
             this.Hide();
             login.Show();
         }
+
+        private void panel3_Click(object sender, EventArgs e)
+        {
+            Form myplant = new FormMyPlant();
+            this.Hide();
+            myplant.Show();
+        }
+
+        private void panel4_Click(object sender, EventArgs e)
+        {
+            Form howtouse = new FormUse();
+            this.Hide();
+            howtouse.Show();
+        }
     }
 }
