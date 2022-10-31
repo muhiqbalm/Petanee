@@ -85,6 +85,7 @@
             this.lbSignUp.TabStop = true;
             this.lbSignUp.Text = "Sign Up";
             this.lbSignUp.VisitedLinkColor = System.Drawing.Color.White;
+            this.lbSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbSignUp_LinkClicked);
             // 
             // FormLogin
             // 

@@ -26,5 +26,12 @@ namespace Petanee
         {
 
         }
+
+        private void lbSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form register = new FormRegister();
+            this.Hide();
+            register.Show();
+        }
     }
 }
