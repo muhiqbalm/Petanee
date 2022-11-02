@@ -38,7 +38,7 @@
             // 
             this.tbUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsername.Location = new System.Drawing.Point(746, 455);
+            this.tbUsername.Location = new System.Drawing.Point(746, 473);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(429, 24);
             this.tbUsername.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPassword.Location = new System.Drawing.Point(746, 559);
+            this.tbPassword.Location = new System.Drawing.Point(746, 576);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(429, 24);
             this.tbPassword.TabIndex = 1;
@@ -61,9 +61,9 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(728, 609);
+            this.btnLogin.Location = new System.Drawing.Point(729, 627);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(463, 55);
+            this.btnLogin.Size = new System.Drawing.Size(462, 55);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -78,7 +78,7 @@
             this.lbSignUp.ForeColor = System.Drawing.Color.White;
             this.lbSignUp.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.lbSignUp.LinkColor = System.Drawing.Color.Transparent;
-            this.lbSignUp.Location = new System.Drawing.Point(1019, 685);
+            this.lbSignUp.Location = new System.Drawing.Point(1019, 702);
             this.lbSignUp.Name = "lbSignUp";
             this.lbSignUp.Size = new System.Drawing.Size(62, 16);
             this.lbSignUp.TabIndex = 3;
@@ -98,7 +98,6 @@
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbUsername);
             this.Name = "FormLogin";
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -74,7 +74,7 @@ namespace Petanee
             this.ClientSize = new System.Drawing.Size(1325, 652);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.btnAdd);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormDetailPlant";
             this.Text = "FormDetailPlant";
             this.ResumeLayout(false);
