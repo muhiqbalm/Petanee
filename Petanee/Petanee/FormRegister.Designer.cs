@@ -44,7 +44,7 @@
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
             this.linkLabel1.Location = new System.Drawing.Point(1024, 766);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(55, 16);
+            this.linkLabel1.Size = new System.Drawing.Size(54, 16);
             this.linkLabel1.TabIndex = 0;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Sign In";
@@ -82,6 +82,7 @@
             this.tbPassSU1.Name = "tbPassSU1";
             this.tbPassSU1.Size = new System.Drawing.Size(430, 20);
             this.tbPassSU1.TabIndex = 3;
+            this.tbPassSU1.UseSystemPasswordChar = true;
             // 
             // tbPassSU2
             // 
@@ -91,6 +92,7 @@
             this.tbPassSU2.Name = "tbPassSU2";
             this.tbPassSU2.Size = new System.Drawing.Size(430, 20);
             this.tbPassSU2.TabIndex = 4;
+            this.tbPassSU2.UseSystemPasswordChar = true;
             // 
             // FormRegister
             // 

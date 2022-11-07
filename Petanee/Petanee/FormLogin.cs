@@ -4,14 +4,20 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using Npgsql;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Petanee
 {
+    
     public partial class FormLogin : Form
     {
+        private NpgsqlConnection conn;
+        string connstring = "Host=localhost;Port=5432;Username=ananta;Password=ananta;Database=Petanee";
+        public static NpgsqlCommand cmd;
         public FormLogin()
         {
             InitializeComponent();
@@ -19,13 +25,32 @@ namespace Petanee
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Form dashboard = new FormDashboard();
-            this.Hide();
-            dashboard.Show();
+            User user = new User();
+            try
+            {
+                user.Login(tbUsername.Text, tbPassword.Text);
+                if(user.Security == 1)
+                {
+                    Form dashboard = new FormParent();
+                    this.Hide();
+                    dashboard.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Username dan Password SALAH!!!");
+                }
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
+            conn = new NpgsqlConnection(connstring);
+            conn.Open();
 
         }
 

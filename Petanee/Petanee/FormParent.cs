@@ -54,6 +54,13 @@ namespace Petanee
             btnDashboard.BackColor = btnGetRecommend.BackColor = btnHowToUse.BackColor = Color.FromArgb(4, 79, 52);
             btnMyPlant.BackColor = Color.FromArgb(3, 59, 39);
         }
+
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            Form login = new FormLogin();
+            this.Hide();
+            login.Show();
+        }
     }
 
 }
