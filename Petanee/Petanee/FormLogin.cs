@@ -37,6 +37,7 @@ namespace Petanee
                 }
                 else
                 {
+                    tbUsername.Text = tbPassword.Text = "";
                     MessageBox.Show("Username dan Password SALAH!!!");
                 }
                

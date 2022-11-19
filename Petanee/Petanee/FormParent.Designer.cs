@@ -174,14 +174,14 @@
             this.panelForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelForm.Location = new System.Drawing.Point(294, 0);
             this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(813, 681);
+            this.panelForm.Size = new System.Drawing.Size(930, 681);
             this.panelForm.TabIndex = 0;
             // 
             // FormParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1107, 681);
+            this.ClientSize = new System.Drawing.Size(1224, 681);
             this.Controls.Add(this.panelForm);
             this.Controls.Add(this.panelSideBar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
