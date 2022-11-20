@@ -28,29 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbLocation = new System.Windows.Forms.TextBox();
+            this.tbSelectLocation = new System.Windows.Forms.TextBox();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // tbLocation
+            // tbSelectLocation
             // 
-            this.tbLocation.BackColor = System.Drawing.Color.White;
-            this.tbLocation.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLocation.Location = new System.Drawing.Point(14, 14);
-            this.tbLocation.Margin = new System.Windows.Forms.Padding(5);
-            this.tbLocation.Multiline = true;
-            this.tbLocation.Name = "tbLocation";
-            this.tbLocation.Size = new System.Drawing.Size(566, 23);
-            this.tbLocation.TabIndex = 1;
+            this.tbSelectLocation.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbSelectLocation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tbSelectLocation.Location = new System.Drawing.Point(128, 99);
+            this.tbSelectLocation.Multiline = true;
+            this.tbSelectLocation.Name = "tbSelectLocation";
+            this.tbSelectLocation.Size = new System.Drawing.Size(422, 20);
+            this.tbSelectLocation.TabIndex = 0;
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(79)))), ((int)(((byte)(52)))));
+            this.btnSubmit.FlatAppearance.BorderSize = 0;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.Color.White;
+            this.btnSubmit.Location = new System.Drawing.Point(576, 91);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(221, 37);
+            this.btnSubmit.TabIndex = 2;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(128, 230);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(658, 337);
+            this.dataGridView1.TabIndex = 3;
             // 
             // FormGetRecommendation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.BackgroundImage = global::Petanee.Properties.Resources.form_recommend;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(914, 642);
-            this.Controls.Add(this.tbLocation);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.tbSelectLocation);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormGetRecommendation";
             this.Text = "FormGetRecommendation";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -58,6 +91,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox tbLocation;
+        private System.Windows.Forms.TextBox tbSelectLocation;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
