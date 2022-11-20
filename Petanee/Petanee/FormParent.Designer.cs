@@ -176,6 +176,7 @@
             this.panelForm.Name = "panelForm";
             this.panelForm.Size = new System.Drawing.Size(930, 681);
             this.panelForm.TabIndex = 0;
+            this.panelForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelForm_Paint);
             // 
             // FormParent
             // 

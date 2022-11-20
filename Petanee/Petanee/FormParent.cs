@@ -47,6 +47,7 @@ namespace Petanee
 
         private void btnGetRecommend_Click(object sender, EventArgs e)
         {
+            loadForm(new FormGetRecommendation());
             btnDashboard.BackColor = btnMyPlant.BackColor = btnHowToUse.BackColor = Color.FromArgb(4, 79, 52);
             btnGetRecommend.BackColor = Color.FromArgb(3, 59, 39);
         }
@@ -62,6 +63,11 @@ namespace Petanee
             Form login = new FormLogin();
             this.Hide();
             login.Show();
+        }
+
+        private void panelForm_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 
