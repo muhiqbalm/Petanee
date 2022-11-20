@@ -15,6 +15,8 @@ namespace Petanee
         public FormParent()
         {
             InitializeComponent();
+            loadForm(new FormDashboard());
+            btnDashboard.BackColor = Color.FromArgb(3, 59, 39);
         }
 
         public void loadForm(object Form)

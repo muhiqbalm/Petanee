@@ -184,7 +184,9 @@
             this.ClientSize = new System.Drawing.Size(1224, 681);
             this.Controls.Add(this.panelForm);
             this.Controls.Add(this.panelSideBar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormParent";
             this.Text = " Petanee";
             this.panelSideBar.ResumeLayout(false);
