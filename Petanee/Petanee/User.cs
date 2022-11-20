@@ -44,8 +44,9 @@ namespace Petanee
                 cmd.Parameters.AddWithValue("_sandi", _password);
                 if ((int)cmd.ExecuteScalar() == 1)
                 {
+                    string loginusername = _username;
                     _loginsecurity = 1;
-                    MessageBox.Show("Berhasil");
+                     MessageBox.Show("Selamat Datang " + loginusername);
                 }
             }
             catch (Exception ex)
