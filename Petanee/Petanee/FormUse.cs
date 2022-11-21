@@ -10,8 +10,9 @@ using System.Windows.Forms;
 
 namespace Petanee
 {
-    public partial class FormUse : Form
+    partial class FormUse : Form
     {
+        public User Pengguna;
         public FormUse()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace Petanee
 
         private void panel3_Click(object sender, EventArgs e)
         {
-            Form dashboard = new FormDashboard();
+            Form dashboard = new FormDashboard(Pengguna);
             this.Hide();
             dashboard.Show();
         }

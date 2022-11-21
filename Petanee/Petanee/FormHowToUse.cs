@@ -16,5 +16,10 @@ namespace Petanee
         {
             InitializeComponent();
         }
+
+        private void FormHowToUse_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

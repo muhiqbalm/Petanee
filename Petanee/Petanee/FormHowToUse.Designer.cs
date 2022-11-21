@@ -42,6 +42,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormHowToUse";
             this.Text = "FormHowToUse";
+            this.Load += new System.EventHandler(this.FormHowToUse_Load);
             this.ResumeLayout(false);
 
         }

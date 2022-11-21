@@ -10,12 +10,17 @@ using System.Windows.Forms;
 
 namespace Petanee
 {
-    public partial class FormParent : Form
+    partial class FormParent : Form
     {
-        public FormParent()
+        public User Pengguna;
+        public FormParent(User pengguna)
         {
             InitializeComponent();
-            loadForm(new FormDashboard());
+
+            Pengguna = pengguna;
+            string username = Pengguna.Username;
+
+            loadForm(new FormDashboard(Pengguna));
             btnDashboard.BackColor = Color.FromArgb(3, 59, 39);
         }
 
@@ -35,7 +40,7 @@ namespace Petanee
         {
             btnHowToUse.BackColor = btnGetRecommend.BackColor = btnMyPlant.BackColor = Color.FromArgb(4, 79, 52);
             btnDashboard.BackColor = Color.FromArgb(3, 59, 39);
-            loadForm(new FormDashboard());
+            loadForm(new FormDashboard(Pengguna));
         }
 
         private void btnHowToUse_Click(object sender, EventArgs e)

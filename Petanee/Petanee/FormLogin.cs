@@ -31,7 +31,7 @@ namespace Petanee
                 user.Login(tbUsername.Text, tbPassword.Text);
                 if(user.Security == 1)
                 {
-                    Form dashboard = new FormParent();
+                    Form dashboard = new FormParent(user);
                     this.Hide();
                     dashboard.Show();
                 }

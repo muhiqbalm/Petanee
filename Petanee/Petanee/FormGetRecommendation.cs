@@ -18,8 +18,10 @@ using System.Collections;
 
 namespace Petanee
 {
-    public partial class FormGetRecommendation : Form
+    partial class FormGetRecommendation : Form
     {
+        public User Pengguna;
+
         public string climate;
         public DataTable dt;
 
@@ -71,7 +73,7 @@ namespace Petanee
 
         private void panel2_Click(object sender, EventArgs e)
         {
-            Form dashboard = new FormDashboard();
+            Form dashboard = new FormDashboard(Pengguna);
             this.Hide();
             dashboard.Show();
         }
