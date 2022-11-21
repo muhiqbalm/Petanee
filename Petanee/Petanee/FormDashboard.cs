@@ -1,5 +1,6 @@
-﻿using Npgsql;
+﻿﻿using Npgsql;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,7 @@ namespace Petanee
         public static NpgsqlCommand cmd;
         public string sql = null;
         public User Pengguna;
+        private DataGridViewRow r;
 
         public FormDashboard(User pengguna)
         {
@@ -60,12 +62,73 @@ namespace Petanee
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             Location lokasi = new Location();
-            lokasi.tambahLokasi(textBox1.Text, textBox2.Text, Pengguna.Username);
+            if (textBox1.Text != "" && textBox2.Text != "")
+            {
+                conn.Open();
+                lokasi.tambahLokasi(textBox1.Text, textBox2.Text, Pengguna.Username);
+                loadData();
+            }
+            else
+            {
+                MessageBox.Show("Data Tidak Lengkap");
+            }
+
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                r = dataGridView1.Rows[e.RowIndex];
+            }
         }
 
         private void FormDashboard_Load(object sender, EventArgs e)
         {
-
+            loadData();
+            conn.Open();
         }
+        public void loadData()
+        {
+            conn = new NpgsqlConnection(connstring);
+            cmd = new NpgsqlCommand("select id, kota, negara from location where pemilik like " + $"'%{Pengguna.Username}%'", conn);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable();
+            dt.Clear();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (r == null)
+            {
+                MessageBox.Show("Pilih data yang akan dihapus");
+                return;
+            }
+            try
+            {
+                /*sql = @"select * from deletelocation(:_id)";
+                cmd = new NpgsqlCommand(sql,conn);
+                cmd.Parameters.AddWithValue("_id", r.Cells["_id"].Value.ToString());
+                if ((int)cmd.ExecuteScalar() == 1)
+                {
+                    MessageBox.Show("Lokasi Berhasil dihapus");
+                    r=null;
+                }*/
+
+                NpgsqlCommand cmd = new NpgsqlCommand("Delete from location where id=" + dataGridView1.SelectedRows[0].Cells[0].Value.ToString() + "", conn);
+                cmd.ExecuteNonQuery();
+                dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
+                MessageBox.Show("Berhasil");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
     }
 }
