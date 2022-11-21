@@ -46,7 +46,7 @@ namespace Petanee
                 {
                     string loginusername = _username;
                     _loginsecurity = 1;
-                     MessageBox.Show("Selamat Datang " + loginusername);
+                    MessageBox.Show("Selamat Datang " + loginusername);
                 }
             }
             catch (Exception ex)

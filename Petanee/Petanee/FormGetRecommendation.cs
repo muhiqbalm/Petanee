@@ -30,6 +30,8 @@ namespace Petanee
         public static NpgsqlCommand cmd;
         public string sql = null;
 
+        public DataGridViewRow r;
+
         public FormGetRecommendation()
         {
             InitializeComponent();
@@ -108,7 +110,7 @@ namespace Petanee
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             getClimate();
-            GetRecommendation("select Nama, Iklim, Kategori, Image from plants where iklim like ");
+            GetRecommendation("select Id, Nama, Iklim, Kategori, Image from plants where iklim like ");
             rbHias.Checked = tbKebun.Checked = false;
         }
 
@@ -245,6 +247,18 @@ namespace Petanee
                     dr["Gambar"] = File.ReadAllBytes(dr["Image"].ToString());
                 }
                 dataGridView1.DataSource = dt;
+            }
+        }
+
+        public void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                r = dataGridView1.Rows[e.RowIndex];
+                string index = r.Cells["id"].Value.ToString();
+                int index2 = int.Parse(index);
+                FormDetailPlant detailPlant = new FormDetailPlant(index2);
+                detailPlant.Show();
             }
         }
     }

@@ -62,5 +62,10 @@ namespace Petanee
             Location lokasi = new Location();
             lokasi.tambahLokasi(textBox1.Text, textBox2.Text, Pengguna.Username);
         }
+
+        private void FormDashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
