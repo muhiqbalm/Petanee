@@ -12,6 +12,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Collections;
 
 
 namespace Petanee
@@ -104,32 +106,144 @@ namespace Petanee
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             getClimate();
+            GetRecommendation("select Nama, Iklim, Kategori, Image from plants where iklim like ");
+            rbHias.Checked = tbKebun.Checked = false;
+        }
+
+        bool isHiasChecked = false;
+        bool isKebunChecked = false;
+        private void rbHias_CheckedChanged(object sender, EventArgs e)
+        {
+            isHiasChecked = rbHias.Checked;
+        }
+
+        private void GetRecommendation(string query)
+        {
             try
             {
-
-
-                dataGridView1.DataSource = null;
+                conn = new NpgsqlConnection(connstring);
                 string sqlqueryclimate = $"'%{climate}%'";
-                sql = @"select * from plants where iklim like " + sqlqueryclimate;
-                /*  sql = @"select * from plants";*/
-                cmd = new NpgsqlCommand(sql, conn);
-                dt = new DataTable();
-                NpgsqlDataReader rd = cmd.ExecuteReader();
-                dt.Load(rd);
+                //cmd = new NpgsqlCommand("select Nama, Iklim, Image from plants where iklim like " + sqlqueryclimate, conn);
+                cmd = new NpgsqlCommand(query + $"'%{climate}%'", conn);
+                NpgsqlDataAdapter da = new NpgsqlDataAdapter();
+                da.SelectCommand = cmd;
+                DataTable dt = new DataTable();
+                dt.Clear();
+                da.Fill(dt);
+                dt.Columns.Add("Gambar", Type.GetType("System.Byte[]"));
+                foreach (DataRow dr in dt.Rows)
+                {
+                    dr["Gambar"] = File.ReadAllBytes(dr["Image"].ToString());
+                }
                 dataGridView1.DataSource = dt;
             }
             catch
             {
-
+                MessageBox.Show("Terjadi Error, Mungkin Lokasi yang Anda Masukkan Salah!");
             }
-            
-
-
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void rbHias_Click(object sender, EventArgs e)
         {
+            if (rbHias.Checked && !isHiasChecked)
+            {
+                rbHias.Checked = false;
+                GetRecommendation("select Nama, Iklim, Kategori, Image from plants where iklim like ");
+            }
 
+            else
+            {
+                GetRecommendation("select Nama, Iklim, Kategori, Image from plants where kategori = 'Hias' and iklim like ");
+                rbHias.Checked = true;
+                isHiasChecked = false;
+                tbKebun.Checked = false;
+            }
+        }
+
+        private void tbKebun_CheckedChanged(object sender, EventArgs e)
+        {
+            isKebunChecked = tbKebun.Checked;
+        }
+
+        private void tbKebun_Click(object sender, EventArgs e)
+        {
+            if (tbKebun.Checked && !isKebunChecked)
+            {
+                tbKebun.Checked = false;
+                GetRecommendation("select Nama, Iklim, Kategori, Image from plants where iklim like ");
+            }
+
+            else
+            {
+                GetRecommendation("select Nama, Iklim, Kategori, Image from plants where kategori = 'Kebun' and iklim like ");
+                tbKebun.Checked = true;
+                isKebunChecked = false;
+                rbHias.Checked = false;
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            tbSelectLocation.Text = "";
+            rbHias.Checked = tbKebun.Checked = false;
+            textBox1.Text = "";
+        }
+
+        //Search With TextBox
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if(rbHias.Checked)
+            {
+                conn = new NpgsqlConnection(connstring);
+                string sqlqueryclimate = $"'%{climate}%'";
+                cmd = new NpgsqlCommand("select Nama, Iklim, Kategori, Image from plants where kategori = 'Hias' and iklim like " + sqlqueryclimate + " and Nama like " + $"'%{textBox1.Text}%'", conn);
+                NpgsqlDataAdapter da = new NpgsqlDataAdapter();
+                da.SelectCommand = cmd;
+                DataTable dt = new DataTable();
+                dt.Clear();
+                da.Fill(dt);
+                dt.Columns.Add("Gambar", Type.GetType("System.Byte[]"));
+                foreach (DataRow dr in dt.Rows)
+                {
+                    dr["Gambar"] = File.ReadAllBytes(dr["Image"].ToString());
+                }
+                dataGridView1.DataSource = dt;
+            }
+            else if(tbKebun.Checked)
+            {
+                conn = new NpgsqlConnection(connstring);
+                string sqlqueryclimate = $"'%{climate}%'";
+                cmd = new NpgsqlCommand("select Nama, Iklim, Kategori, Image from plants where kategori = 'Kebun' and iklim like " + sqlqueryclimate + " and Nama like " + $"'%{textBox1.Text}%'", conn);
+                NpgsqlDataAdapter da = new NpgsqlDataAdapter();
+                da.SelectCommand = cmd;
+                DataTable dt = new DataTable();
+                dt.Clear();
+                da.Fill(dt);
+                dt.Columns.Add("Gambar", Type.GetType("System.Byte[]"));
+                foreach (DataRow dr in dt.Rows)
+                {
+                    dr["Gambar"] = File.ReadAllBytes(dr["Image"].ToString());
+                }
+                dataGridView1.DataSource = dt;
+            }
+            else
+            {
+                conn = new NpgsqlConnection(connstring);
+                string sqlqueryclimate = $"'%{climate}%'";
+                cmd = new NpgsqlCommand("select Nama, Iklim, Kategori, Image from plants where iklim like " + sqlqueryclimate + " and Nama like " + $"'%{textBox1.Text}%'", conn);
+                NpgsqlDataAdapter da = new NpgsqlDataAdapter();
+                da.SelectCommand = cmd;
+                DataTable dt = new DataTable();
+                dt.Clear();
+                da.Fill(dt);
+                dt.Columns.Add("Gambar", Type.GetType("System.Byte[]"));
+                foreach (DataRow dr in dt.Rows)
+                {
+                    dr["Gambar"] = File.ReadAllBytes(dr["Image"].ToString());
+                }
+                dataGridView1.DataSource = dt;
+            }
         }
     }
 }

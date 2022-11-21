@@ -93,6 +93,16 @@ namespace Petanee.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap form_dashboard1 {
+            get {
+                object obj = ResourceManager.GetObject("form_dashboard1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap form_howtouse {
             get {
                 object obj = ResourceManager.GetObject("form_howtouse", resourceCulture);
@@ -106,6 +116,16 @@ namespace Petanee.Properties {
         internal static System.Drawing.Bitmap form_recommend {
             get {
                 object obj = ResourceManager.GetObject("form_recommend", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap form_recommend1 {
+            get {
+                object obj = ResourceManager.GetObject("form_recommend1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -2,53 +2,54 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Npgsql;
 
 namespace Petanee
 {
     public partial class FormMyPlant : Form
     {
+        private NpgsqlConnection conn;
+        string connstring = "Host=localhost;Port=5432;Username=postgres;Password=ananta;Database=Petanee";
+        public static NpgsqlCommand cmd;
+        public string sql = null;
+
         public FormMyPlant()
         {
             InitializeComponent();
         }
 
-        private void panel3_Click(object sender, EventArgs e)
+        private void loadData()
         {
-            Form getrecommendation = new FormGetRecommendation();
-            this.Hide();
-            getrecommendation.Show();
+            conn = new NpgsqlConnection(connstring);
+            conn.Open();
+            cmd = new NpgsqlCommand("select Nama, Image from plants", conn);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable();
+            dt.Clear();
+            da.Fill(dt);
+            dt.Columns.Add("Gambar", Type.GetType("System.Byte[]"));
+            foreach (DataRow dr in dt.Rows)
+            {
+                dr["Gambar"] = File.ReadAllBytes(dr["Image"].ToString()); 
+            }
+            dataGridView1.DataSource = dt;
+            //DataGridViewImageColumn img1 = new DataGridViewImageColumn();
+            //img1 = (DataGridViewImageColumn)dataGridView1.Columns[2];
+            //img1.ImageLayout = DataGridViewImageCellLayout.Stretch;
+
         }
 
-        private void panel5_Click(object sender, EventArgs e)
+        private void FormMyPlant_Load(object sender, EventArgs e)
         {
-            Form howtouse = new FormUse();
-            this.Hide();
-            howtouse.Show();
-        }
-
-        private void panel2_Click(object sender, EventArgs e)
-        {
-            Form dashboard = new FormDashboard();
-            this.Hide();
-            dashboard.Show();
-        }
-
-        private void panel1_Click(object sender, EventArgs e)
-        {
-            Form login = new FormLogin();
-            this.Hide();
-            login.Show();
-        }
-
-        private void panelPlant_Click(object sender, EventArgs e)
-        {
-            Form detail = new FormDetailPlant();
-            detail.Show();
+            loadData();
         }
     }
 }
