@@ -103,6 +103,26 @@ namespace Petanee.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap form_dashboard2 {
+            get {
+                object obj = ResourceManager.GetObject("form_dashboard2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap form_dashboard3 {
+            get {
+                object obj = ResourceManager.GetObject("form_dashboard3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap form_howtouse {
             get {
                 object obj = ResourceManager.GetObject("form_howtouse", resourceCulture);
@@ -126,6 +146,26 @@ namespace Petanee.Properties {
         internal static System.Drawing.Bitmap form_recommend1 {
             get {
                 object obj = ResourceManager.GetObject("form_recommend1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formDetail {
+            get {
+                object obj = ResourceManager.GetObject("formDetail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formDetail2 {
+            get {
+                object obj = ResourceManager.GetObject("formDetail2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

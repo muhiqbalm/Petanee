@@ -28,28 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbSelectLocation = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Gambar = new System.Windows.Forms.DataGridViewImageColumn();
             this.rbHias = new System.Windows.Forms.RadioButton();
             this.tbKebun = new System.Windows.Forms.RadioButton();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbLocation = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tbSelectLocation
-            // 
-            this.tbSelectLocation.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbSelectLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSelectLocation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tbSelectLocation.Location = new System.Drawing.Point(118, 99);
-            this.tbSelectLocation.Multiline = true;
-            this.tbSelectLocation.Name = "tbSelectLocation";
-            this.tbSelectLocation.Size = new System.Drawing.Size(442, 22);
-            this.tbSelectLocation.TabIndex = 0;
             // 
             // btnSubmit
             // 
@@ -69,7 +57,6 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -77,17 +64,20 @@
             this.Gambar});
             this.dataGridView1.Location = new System.Drawing.Point(112, 237);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 200;
             this.dataGridView1.Size = new System.Drawing.Size(705, 330);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Gambar
             // 
-            this.Gambar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Gambar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Gambar.DataPropertyName = "Gambar";
             this.Gambar.HeaderText = "Gambar";
+            this.Gambar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Gambar.Name = "Gambar";
-            this.Gambar.Width = 50;
+            this.Gambar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Gambar.Width = 150;
             // 
             // rbHias
             // 
@@ -117,20 +107,6 @@
             this.tbKebun.CheckedChanged += new System.EventHandler(this.tbKebun_CheckedChanged);
             this.tbKebun.Click += new System.EventHandler(this.tbKebun_Click);
             // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(79)))), ((int)(((byte)(52)))));
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(618, 592);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(205, 37);
-            this.btnAdd.TabIndex = 6;
-            this.btnAdd.Text = "Add to My Plant";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            // 
             // btnRefresh
             // 
             this.btnRefresh.BackColor = System.Drawing.Color.DarkGray;
@@ -139,9 +115,9 @@
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.ForeColor = System.Drawing.Color.Black;
-            this.btnRefresh.Location = new System.Drawing.Point(390, 592);
+            this.btnRefresh.Location = new System.Drawing.Point(594, 593);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(205, 37);
+            this.btnRefresh.Size = new System.Drawing.Size(229, 37);
             this.btnRefresh.TabIndex = 7;
             this.btnRefresh.Text = "Reset";
             this.btnRefresh.UseVisualStyleBackColor = false;
@@ -159,6 +135,16 @@
             this.textBox1.TabIndex = 8;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // cbLocation
+            // 
+            this.cbLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLocation.FormattingEnabled = true;
+            this.cbLocation.Location = new System.Drawing.Point(114, 97);
+            this.cbLocation.Name = "cbLocation";
+            this.cbLocation.Size = new System.Drawing.Size(448, 26);
+            this.cbLocation.TabIndex = 9;
+            // 
             // FormGetRecommendation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,14 +153,13 @@
             this.BackgroundImage = global::Petanee.Properties.Resources.form_recommend1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(930, 681);
+            this.Controls.Add(this.cbLocation);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.tbKebun);
             this.Controls.Add(this.rbHias);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.tbSelectLocation);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormGetRecommendation";
@@ -187,15 +172,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox tbSelectLocation;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewImageColumn Gambar;
         private System.Windows.Forms.RadioButton rbHias;
         private System.Windows.Forms.RadioButton tbKebun;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridViewImageColumn Gambar;
+        private System.Windows.Forms.ComboBox cbLocation;
     }
 }

@@ -40,16 +40,9 @@ namespace Petanee
 
         private void panel2_Click(object sender, EventArgs e)
         {
-            Form getrecommendation = new FormGetRecommendation();
+            Form getrecommendation = new FormGetRecommendation(Pengguna);
             this.Hide();
             getrecommendation.Show();
-        }
-
-        private void panel3_Click(object sender, EventArgs e)
-        {
-            Form myplant = new FormMyPlant();
-            this.Hide();
-            myplant.Show();
         }
 
         private void panel4_Click(object sender, EventArgs e)
@@ -64,7 +57,6 @@ namespace Petanee
             Location lokasi = new Location();
             if (textBox1.Text != "" && textBox2.Text != "")
             {
-                conn.Open();
                 lokasi.tambahLokasi(textBox1.Text, textBox2.Text, Pengguna.Username);
                 loadData();
             }

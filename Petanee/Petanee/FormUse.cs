@@ -34,16 +34,9 @@ namespace Petanee
 
         private void panel2_Click(object sender, EventArgs e)
         {
-            Form getrecommendation = new FormGetRecommendation();
+            Form getrecommendation = new FormGetRecommendation(Pengguna);
             this.Hide();
             getrecommendation.Show();
-        }
-
-        private void panel5_Click(object sender, EventArgs e)
-        {
-            Form myplant = new FormMyPlant();
-            this.Hide();
-            myplant.Show();
         }
     }
 }

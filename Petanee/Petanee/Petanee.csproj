@@ -149,12 +149,6 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMyPlant.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMyPlant.Designer.cs">
-      <DependentUpon>FormMyPlant.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormParent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,9 +186,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormMyPlant.resx">
-      <DependentUpon>FormMyPlant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormParent.resx">
       <DependentUpon>FormParent.cs</DependentUpon>
@@ -282,6 +273,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\form_recommend1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\form_dashboard2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\formDetail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\formDetail2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\form_dashboard3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />

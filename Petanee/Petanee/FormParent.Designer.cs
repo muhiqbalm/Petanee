@@ -32,7 +32,6 @@
             this.panelSideBar = new System.Windows.Forms.Panel();
             this.btnSignOut = new System.Windows.Forms.Button();
             this.btnHowToUse = new System.Windows.Forms.Button();
-            this.btnMyPlant = new System.Windows.Forms.Button();
             this.btnGetRecommend = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
@@ -48,7 +47,6 @@
             this.panelSideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(79)))), ((int)(((byte)(52)))));
             this.panelSideBar.Controls.Add(this.btnSignOut);
             this.panelSideBar.Controls.Add(this.btnHowToUse);
-            this.panelSideBar.Controls.Add(this.btnMyPlant);
             this.panelSideBar.Controls.Add(this.btnGetRecommend);
             this.panelSideBar.Controls.Add(this.btnDashboard);
             this.panelSideBar.Controls.Add(this.panelLogo);
@@ -84,7 +82,7 @@
             this.btnHowToUse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHowToUse.Image = global::Petanee.Properties.Resources.menu_howtouse;
             this.btnHowToUse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHowToUse.Location = new System.Drawing.Point(0, 421);
+            this.btnHowToUse.Location = new System.Drawing.Point(0, 360);
             this.btnHowToUse.Name = "btnHowToUse";
             this.btnHowToUse.Padding = new System.Windows.Forms.Padding(31, 0, 0, 0);
             this.btnHowToUse.Size = new System.Drawing.Size(294, 61);
@@ -92,25 +90,6 @@
             this.btnHowToUse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHowToUse.UseVisualStyleBackColor = false;
             this.btnHowToUse.Click += new System.EventHandler(this.btnHowToUse_Click);
-            // 
-            // btnMyPlant
-            // 
-            this.btnMyPlant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(79)))), ((int)(((byte)(52)))));
-            this.btnMyPlant.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMyPlant.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMyPlant.FlatAppearance.BorderSize = 0;
-            this.btnMyPlant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMyPlant.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMyPlant.Image = global::Petanee.Properties.Resources.menu_myplant;
-            this.btnMyPlant.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMyPlant.Location = new System.Drawing.Point(0, 360);
-            this.btnMyPlant.Name = "btnMyPlant";
-            this.btnMyPlant.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnMyPlant.Size = new System.Drawing.Size(294, 61);
-            this.btnMyPlant.TabIndex = 6;
-            this.btnMyPlant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMyPlant.UseVisualStyleBackColor = false;
-            this.btnMyPlant.Click += new System.EventHandler(this.btnMyPlant_Click);
             // 
             // btnGetRecommend
             // 
@@ -205,7 +184,6 @@
         private System.Windows.Forms.Panel panelSideBar;
         private System.Windows.Forms.Button btnGetRecommend;
         private System.Windows.Forms.Button btnHowToUse;
-        private System.Windows.Forms.Button btnMyPlant;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnSignOut;
         private System.Windows.Forms.Panel panelForm;

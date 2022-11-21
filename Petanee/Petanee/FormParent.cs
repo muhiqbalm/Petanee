@@ -38,7 +38,7 @@ namespace Petanee
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            btnHowToUse.BackColor = btnGetRecommend.BackColor = btnMyPlant.BackColor = Color.FromArgb(4, 79, 52);
+            btnHowToUse.BackColor = btnGetRecommend.BackColor = Color.FromArgb(4, 79, 52);
             btnDashboard.BackColor = Color.FromArgb(3, 59, 39);
             loadForm(new FormDashboard(Pengguna));
         }
@@ -46,21 +46,15 @@ namespace Petanee
         private void btnHowToUse_Click(object sender, EventArgs e)
         {
             loadForm(new FormHowToUse());
-            btnDashboard.BackColor = btnGetRecommend.BackColor = btnMyPlant.BackColor = Color.FromArgb(4, 79, 52);
+            btnDashboard.BackColor = btnGetRecommend.BackColor = Color.FromArgb(4, 79, 52);
             btnHowToUse.BackColor = Color.FromArgb(3, 59, 39);
         }
 
         private void btnGetRecommend_Click(object sender, EventArgs e)
         {
-            loadForm(new FormGetRecommendation());
-            btnDashboard.BackColor = btnMyPlant.BackColor = btnHowToUse.BackColor = Color.FromArgb(4, 79, 52);
+            loadForm(new FormGetRecommendation(Pengguna));
+            btnDashboard.BackColor = btnHowToUse.BackColor = Color.FromArgb(4, 79, 52);
             btnGetRecommend.BackColor = Color.FromArgb(3, 59, 39);
-        }
-
-        private void btnMyPlant_Click(object sender, EventArgs e)
-        {
-            btnDashboard.BackColor = btnGetRecommend.BackColor = btnHowToUse.BackColor = Color.FromArgb(4, 79, 52);
-            btnMyPlant.BackColor = Color.FromArgb(3, 59, 39);
         }
 
         private void btnSignOut_Click(object sender, EventArgs e)

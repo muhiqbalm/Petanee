@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Collections;
+using FontAwesome.Sharp;
 
 
 namespace Petanee
@@ -32,16 +33,18 @@ namespace Petanee
 
         public DataGridViewRow r;
 
-        public FormGetRecommendation()
+        public FormGetRecommendation(User pengguna)
         {
             InitializeComponent();
+            Pengguna = pengguna;
+            string username = Pengguna.Username;
         }
         public string getClimate()
         {
             using (WebClient web = new WebClient())
             {
                 string APIKEY = "758e555ef1dd0283ebba5f279e357b35";
-                string fullURL = "https://api.openweathermap.org/data/2.5/weather?appid=" + APIKEY + "&q=" + tbSelectLocation.Text;
+                string fullURL = "https://api.openweathermap.org/data/2.5/weather?appid=" + APIKEY + "&q=" + cbLocation.Text;
                 string url = string.Format(fullURL);
                 var json = web.DownloadString(url);
 
@@ -87,13 +90,6 @@ namespace Petanee
             login.Show();
         }
 
-        private void panel3_Click(object sender, EventArgs e)
-        {
-            Form myplant = new FormMyPlant();
-            this.Hide();
-            myplant.Show();
-        }
-
         private void panel4_Click(object sender, EventArgs e)
         {
             Form howtouse = new FormUse();
@@ -105,6 +101,7 @@ namespace Petanee
         {
             conn = new NpgsqlConnection(connstring);
             conn.Open();
+            loadComboBox();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -152,12 +149,12 @@ namespace Petanee
             if (rbHias.Checked && !isHiasChecked)
             {
                 rbHias.Checked = false;
-                GetRecommendation("select Nama, Iklim, Kategori, Image from plants where iklim like ");
+                GetRecommendation("select Id, Nama, Iklim, Kategori, Image from plants where iklim like ");
             }
 
             else
             {
-                GetRecommendation("select Nama, Iklim, Kategori, Image from plants where kategori = 'Hias' and iklim like ");
+                GetRecommendation("select Id, Nama, Iklim, Kategori, Image from plants where kategori = 'Hias' and iklim like ");
                 rbHias.Checked = true;
                 isHiasChecked = false;
                 tbKebun.Checked = false;
@@ -174,12 +171,12 @@ namespace Petanee
             if (tbKebun.Checked && !isKebunChecked)
             {
                 tbKebun.Checked = false;
-                GetRecommendation("select Nama, Iklim, Kategori, Image from plants where iklim like ");
+                GetRecommendation("select Id, Nama, Iklim, Kategori, Image from plants where iklim like ");
             }
 
             else
             {
-                GetRecommendation("select Nama, Iklim, Kategori, Image from plants where kategori = 'Kebun' and iklim like ");
+                GetRecommendation("select Id, Nama, Iklim, Kategori, Image from plants where kategori = 'Kebun' and iklim like ");
                 tbKebun.Checked = true;
                 isKebunChecked = false;
                 rbHias.Checked = false;
@@ -189,7 +186,7 @@ namespace Petanee
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
-            tbSelectLocation.Text = "";
+            cbLocation.Text = "";
             rbHias.Checked = tbKebun.Checked = false;
             textBox1.Text = "";
         }
@@ -201,7 +198,7 @@ namespace Petanee
             {
                 conn = new NpgsqlConnection(connstring);
                 string sqlqueryclimate = $"'%{climate}%'";
-                cmd = new NpgsqlCommand("select Nama, Iklim, Kategori, Image from plants where kategori = 'Hias' and iklim like " + sqlqueryclimate + " and Nama like " + $"'%{textBox1.Text}%'", conn);
+                cmd = new NpgsqlCommand("select Id, Nama, Iklim, Kategori, Image from plants where kategori = 'Hias' and iklim like " + sqlqueryclimate + " and Nama like " + $"'%{textBox1.Text}%'", conn);
                 NpgsqlDataAdapter da = new NpgsqlDataAdapter();
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
@@ -218,7 +215,7 @@ namespace Petanee
             {
                 conn = new NpgsqlConnection(connstring);
                 string sqlqueryclimate = $"'%{climate}%'";
-                cmd = new NpgsqlCommand("select Nama, Iklim, Kategori, Image from plants where kategori = 'Kebun' and iklim like " + sqlqueryclimate + " and Nama like " + $"'%{textBox1.Text}%'", conn);
+                cmd = new NpgsqlCommand("select Id, Nama, Iklim, Kategori, Image from plants where kategori = 'Kebun' and iklim like " + sqlqueryclimate + " and Nama like " + $"'%{textBox1.Text}%'", conn);
                 NpgsqlDataAdapter da = new NpgsqlDataAdapter();
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
@@ -235,7 +232,7 @@ namespace Petanee
             {
                 conn = new NpgsqlConnection(connstring);
                 string sqlqueryclimate = $"'%{climate}%'";
-                cmd = new NpgsqlCommand("select Nama, Iklim, Kategori, Image from plants where iklim like " + sqlqueryclimate + " and Nama like " + $"'%{textBox1.Text}%'", conn);
+                cmd = new NpgsqlCommand("select Id, Nama, Iklim, Kategori, Image from plants where iklim like " + sqlqueryclimate + " and Nama like " + $"'%{textBox1.Text}%'", conn);
                 NpgsqlDataAdapter da = new NpgsqlDataAdapter();
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
@@ -260,6 +257,33 @@ namespace Petanee
                 FormDetailPlant detailPlant = new FormDetailPlant(index2);
                 detailPlant.Show();
             }
+        }
+
+        public void loadComboBox()
+        {
+            /*NpgsqlConnection conn = new NpgsqlConnection(connstring);
+            conn.Open();
+            string query = "select id, kota from location where pemilik like ";
+            cmd = new NpgsqlCommand(query + $"'%{Pengguna.Username}%'", conn);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter(query, conn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            comboBox1.DataSource = ds.Tables[0];
+            comboBox1.DisplayMember = "kota";
+            comboBox1.ValueMember = "id";
+            comboBox1.Enabled = true;
+            this.comboBox1.SelectedIndex = -1;
+            cmd.ExecuteNonQuery();*/
+
+            NpgsqlConnection conn = new NpgsqlConnection(connstring);
+            string query = "select id, kota from location where pemilik like ";
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter(query + $"'%{Pengguna.Username}%'", conn);
+            conn.Open();
+            DataSet ds = new DataSet();
+            da.Fill(ds, "Kota");
+            cbLocation.DisplayMember = "kota";
+            cbLocation.ValueMember = "id";
+            cbLocation.DataSource = ds.Tables["Kota"];
         }
     }
 }
