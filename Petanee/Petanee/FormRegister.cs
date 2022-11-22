@@ -29,26 +29,32 @@ namespace Petanee
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             User user = new User();
-
-            if (tbPassSU1.Text == tbPassSU2.Text)
+            if(tbUsernameSU.Text != "" && tbPassSU1.Text != "")
             {
-                try
+                if (tbPassSU1.Text == tbPassSU2.Text)
                 {
-                    user.Register(tbUsernameSU.Text, tbPassSU1.Text);
-                    Form login = new FormLogin();
-                    this.Hide();
-                    login.Show();
+                    try
+                    {
+                        user.Register(tbUsernameSU.Text, tbPassSU1.Text);
+                        Form login = new FormLogin();
+                        this.Hide();
+                        login.Show();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
 
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Register Gagal karena Password tidak sama!");
                 }
-                
             }
             else
             {
-                MessageBox.Show("Register  Gagal");
+                MessageBox.Show("Data tidak boleh kosong!");
             }
             
         }
