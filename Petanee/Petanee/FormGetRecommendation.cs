@@ -108,7 +108,21 @@ namespace Petanee
         {
             getClimate();
             GetRecommendation("select Id, Nama, Iklim, Kategori, Image from plants where iklim like ");
-            rbHias.Checked = tbKebun.Checked = false;
+            /*conn = new NpgsqlConnection(connstring);
+            string sqlqueryclimate = $"'%{climate}%'";
+            cmd = new NpgsqlCommand("select id, path from cek_img", conn);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable();
+            dt.Clear();
+            da.Fill(dt);
+            dt.Columns.Add("Gambar", Type.GetType("System.Byte[]"));
+            foreach (DataRow dr in dt.Rows)
+            {
+                dr["Gambar"] = File.ReadAllBytes(dr["path"].ToString());
+            }
+            dataGridView1.DataSource = dt;
+            rbHias.Checked = tbKebun.Checked = false;*/
         }
 
         bool isHiasChecked = false;

@@ -20,8 +20,8 @@ namespace Petanee
             Pengguna = pengguna;
             string username = Pengguna.Username;
 
-            loadForm(new FormDashboard(Pengguna));
-            btnDashboard.BackColor = Color.FromArgb(3, 59, 39);
+            loadForm(new FormHowToUse());
+            btnHowToUse.BackColor = Color.FromArgb(3, 59, 39);
         }
 
         public void loadForm(object Form)

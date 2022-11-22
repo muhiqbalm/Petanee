@@ -18,6 +18,7 @@ namespace Petanee
         private NpgsqlConnection conn;
         string connstring = "Host=localhost;Port=5432;Username=ananta;Password=ananta;Database=Petanee";
         public static NpgsqlCommand cmd;
+
         public FormLogin()
         {
             InitializeComponent();

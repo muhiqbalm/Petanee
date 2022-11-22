@@ -108,7 +108,6 @@ namespace Petanee
                     MessageBox.Show("Lokasi Berhasil dihapus");
                     r=null;
                 }*/
-
                 NpgsqlCommand cmd = new NpgsqlCommand("Delete from location where id=" + dataGridView1.SelectedRows[0].Cells[0].Value.ToString() + "", conn);
                 cmd.ExecuteNonQuery();
                 dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
